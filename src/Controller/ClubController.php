@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Repository\ClubRepository;
 use http\Env\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -38,5 +39,25 @@ class ClubController extends AbstractController
     #[Route('/reservation', name: 'app_reservation')]
     public function reservation(){
         return new  Response("La formation selectionnée est la suivante: ".$_GET['formation'].'.');
+    }
+
+    #[Route('/clubs', name: 'app_club')]
+    public function listClub(ClubRepository $repository) {
+        return $this->render("club/listClub.html.twig",array("tabClub"=>$repository->findAll()));
+    }
+
+    #[Route('/addClub', name: 'app_addclub')]
+    public function addClub(){
+
+        $task = new Task();
+        $task->setTask('Write a blog post');
+        $task->setDueDate(new \DateTime('tomorrow'));
+
+        $form = $this->createFormBuilder($task)
+            ->add('task', TextType::class)
+            ->add('dueDate', DateType::class)
+            ->add('save', SubmitType::class, ['label' => 'Create Task'])
+            ->getForm();
+        return $this->renderForm($form);
     }
 }

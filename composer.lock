@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e71537bc1eba5d8d23b1f3997ecd17f6",
+    "content-hash": "99f7c19abc03705b9879b83c89b24dad",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -3632,16 +3632,16 @@
         },
         {
             "name": "symfony/form",
-            "version": "v5.4.12",
+            "version": "v5.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/form.git",
-                "reference": "d8c5cc929f8dc7a58b710c9474dd7a0173006017"
+                "reference": "d9d661776636ce689bc879b66fb06c6a6895f1a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/form/zipball/d8c5cc929f8dc7a58b710c9474dd7a0173006017",
-                "reference": "d8c5cc929f8dc7a58b710c9474dd7a0173006017",
+                "url": "https://api.github.com/repos/symfony/form/zipball/d9d661776636ce689bc879b66fb06c6a6895f1a7",
+                "reference": "d9d661776636ce689bc879b66fb06c6a6895f1a7",
                 "shasum": ""
             },
             "require": {
@@ -3715,7 +3715,7 @@
             "description": "Allows to easily create, process and reuse HTML forms",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/form/tree/v5.4.12"
+                "source": "https://github.com/symfony/form/tree/v5.4.13"
             },
             "funding": [
                 {
@@ -3731,7 +3731,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-08-05T13:13:10+00:00"
+            "time": "2022-09-28T15:33:58+00:00"
         },
         {
             "name": "symfony/framework-bundle",
@@ -10175,10 +10175,10 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.2.5",
+        "php": ">=8.0",
         "ext-ctype": "*",
         "ext-iconv": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.3.0"
 }

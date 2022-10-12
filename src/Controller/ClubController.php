@@ -2,8 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Club;
+use App\Form\ClubType;
 use App\Repository\ClubRepository;
-use http\Env\Request;
+use Doctrine\ORM\EntityManager;
+use Doctrine\Persistence\ManagerRegistry;
+use phpDocumentor\Reflection\Types\This;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -47,17 +51,19 @@ class ClubController extends AbstractController
     }
 
     #[Route('/addClub', name: 'app_addclub')]
-    public function addClub(){
+    public function addClub(Request $request, ManagerRegistry $doctrine) {
+        // empty function as for now
+        $club = new Club();
+        $em = $doctrine->getManager();
+        $form = $this->createForm(ClubType::class, $club);
+        if ($form->isSubmitted())
+        {
 
-        $task = new Task();
-        $task->setTask('Write a blog post');
-        $task->setDueDate(new \DateTime('tomorrow'));
+        }
 
-        $form = $this->createFormBuilder($task)
-            ->add('task', TextType::class)
-            ->add('dueDate', DateType::class)
-            ->add('save', SubmitType::class, ['label' => 'Create Task'])
-            ->getForm();
-        return $this->renderForm($form);
+
+        return $this->renderForm('club/addClub.html.twig', [
+            'form' => $form,
+        ]);
     }
 }
